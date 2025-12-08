@@ -2712,7 +2712,8 @@
 
     if (path.startsWith('/~_~_gdindex/resources/')) {
       const remain = path.replace('/~_~_gdindex/resources/', '');
-      const r = await fetch(`https://raw.githubusercontent.com/maple3142/GDIndex/master/web/dist/${remain}`);
+      const cdn = self.props.cdn || 'https://cdn.jsdelivr.net/gh/maple3142/GDIndex@master/web/dist/';
+      const r = await fetch(`${cdn}${remain}`);
       return new Response(r.body, {
         headers: {
           'Content-Type': mime.getType(remain) + '; charset=utf-8',
