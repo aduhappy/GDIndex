@@ -10,7 +10,8 @@
 		user: '',
 		pass: '',
 		upload: false,
-		lite: false
+		lite: false,
+		cdn: 'https://cdn.jsdelivr.net/gh/maple3142/GDIndex@master/web/dist/'
 	};
 (function () {
   'use strict';
@@ -2712,7 +2713,7 @@
 
     if (path.startsWith('/~_~_gdindex/resources/')) {
       const remain = path.replace('/~_~_gdindex/resources/', '');
-      const cdn = self.props.cdn || 'https://cdn.jsdelivr.net/gh/maple3142/GDIndex@master/web/dist/';
+      const cdn = self.props.cdn;
       const r = await fetch(`${cdn}${remain}`);
       return new Response(r.body, {
         headers: {

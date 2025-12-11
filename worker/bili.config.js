@@ -27,6 +27,7 @@ module.exports = {
 		user: '',
 		pass: '',
 		upload: false,
-		lite: false
+		lite: false,
+		cdn: 'https://cdn.jsdelivr.net/gh/maple3142/GDIndex@master/web/dist/'
 	};`.slice(1)
 }
